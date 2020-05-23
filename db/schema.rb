@@ -10,17 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_23_111305) do
+ActiveRecord::Schema.define(version: 2020_05_23_193408) do
 
-  create_table "books", force: :cascade do |t|
-    t.integer "number"
-    t.integer "series_id", null: false
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "pgcrypto"
+  enable_extension "plpgsql"
+
+  create_table "books", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.integer "number", null: false
+    t.uuid "series_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["series_id"], name: "index_books_on_series_id"
   end
 
-  create_table "series", force: :cascade do |t|
+  create_table "series", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
