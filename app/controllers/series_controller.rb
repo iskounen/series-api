@@ -35,6 +35,13 @@ class SeriesController < ApplicationController
     end
   end
 
+  def destroy
+    @series = Series.find(params[:id])
+    @series.destroy
+   
+    redirect_to series_index_path
+  end
+
   private
     def series_params
       params.require(:series).permit(:title)
