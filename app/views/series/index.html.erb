@@ -4,13 +4,13 @@
 
 <table>
   <tr>
-    <th>Name</th>
+    <th>Title</th>
     <th></th>
   </tr>
  
   <% @series.each do |series| %>
     <tr>
-      <td><%= series.name %></td>
+      <td><%= series.title %></td>
       <td><%= link_to 'Show', series_path(series) %></td>
     </tr>
   <% end %>
