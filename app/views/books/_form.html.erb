@@ -1,0 +1,9 @@
+<%= form_with(model: [ @series, @series.books.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :number %><br>
+    <%= form.text_field :number %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
