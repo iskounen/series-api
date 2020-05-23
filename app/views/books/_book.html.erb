@@ -2,7 +2,10 @@
   <strong>Number:</strong>
   <%= book.number %>
 </p>
- 
+<p>
+  <strong>Archive:</strong>
+  <%= url_for(book.archive) %>
+</p>
 <p>
   <%= link_to 'Destroy Book', [book.series, book],  method: :delete, data: { confirm: 'Are you sure?' } %>
 </p>
