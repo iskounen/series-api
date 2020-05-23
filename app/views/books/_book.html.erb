@@ -2,3 +2,7 @@
   <strong>Number:</strong>
   <%= book.number %>
 </p>
+ 
+<p>
+  <%= link_to 'Destroy Book', [book.series, book],  method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
