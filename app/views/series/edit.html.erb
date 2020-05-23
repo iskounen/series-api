@@ -1,29 +1,5 @@
 <h1>Edit Series</h1>
  
-<%= form_with(model: @series, local: true) do |form| %>
- 
-  <% if @series.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@series.errors.count, "error") %> prohibited this series from being saved:
-      </h2>
-      <ul>
-        <% @series.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
- 
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
- 
-  <p>
-    <%= form.submit %>
-  </p>
- 
-<% end %>
+<%= render 'form' %>
  
 <%= link_to 'Back', series_index_path %>
