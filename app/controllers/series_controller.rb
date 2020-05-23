@@ -1,6 +1,11 @@
 class SeriesController < ApplicationController
   def index
     @series = Series.all
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @series }
+     end
   end
 
   def show

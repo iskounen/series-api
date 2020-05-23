@@ -4,7 +4,7 @@
 </p>
 <p>
   <strong>Archive:</strong>
-  <%= url_for(book.archive) %>
+  <%= link_to 'Download', rails_blob_path(book.archive, disposition: "attachment") %>
 </p>
 <p>
   <%= link_to 'Destroy Book', [book.series, book],  method: :delete, data: { confirm: 'Are you sure?' } %>
