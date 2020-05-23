@@ -7,11 +7,18 @@ class SeriesController < ApplicationController
     @series = Series.find(params[:id])
   end
 
+  def new
+    @series = Series.new
+  end
+
   def create
     @series = Series.new(series_params)
  
-    @series.save
-    redirect_to @series
+    if @series.save
+      redirect_to @series
+    else
+      render 'new'
+    end
   end
 
   private

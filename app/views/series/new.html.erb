@@ -1,6 +1,20 @@
 <h1>New Series</h1>
 
 <%= form_with scope: :series, url: series_index_path, local: true do |form| %>
+
+  <% if @series.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@series.errors.count, "error") %> prohibited this series from being saved:
+      </h2>
+      <ul>
+        <% @series.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <p>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
