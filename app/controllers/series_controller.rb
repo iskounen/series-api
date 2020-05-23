@@ -11,6 +11,10 @@ class SeriesController < ApplicationController
     @series = Series.new
   end
 
+  def edit
+    @series = Series.find(params[:id])
+  end
+
   def create
     @series = Series.new(series_params)
  
@@ -18,6 +22,16 @@ class SeriesController < ApplicationController
       redirect_to @series
     else
       render 'new'
+    end
+  end
+
+  def update
+    @series = Series.find(params[:id])
+   
+    if @series.update(series_params)
+      redirect_to @series
+    else
+      render 'edit'
     end
   end
 
