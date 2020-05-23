@@ -3,5 +3,24 @@
   <%= @series.title %>
 </p>
 
+<h2>Books</h2>
+<% @series.books.each do |book| %>
+  <p>
+    <strong>Number:</strong>
+    <%= book.number %>
+  </p>
+<% end %>
+
+<h2>Add a book:</h2>
+<%= form_with(model: [ @series, @series.books.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :number %><br>
+    <%= form.text_field :number %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
 <%= link_to 'Edit', edit_series_path(@series) %> |
 <%= link_to 'Back', series_index_path %>
