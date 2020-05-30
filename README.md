@@ -1,24 +1,17 @@
-# README
+# Series API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A web application and API service that makes archives of serialized books available to client applications.
 
-Things you may want to cover:
+## System dependencies
 
-* Ruby version
+- Postgres
 
-* System dependencies
+## Configuration
 
-* Configuration
+- To create the database and load the schema, run `rails db:setup`.
+- To connect to the database, create a `.env` file with keys for `DATABASE_USERNAME` and `DATABASE_PASSWORD`.
 
-* Database creation
+## Run
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- To begin the application, run `rails server`.
+- By default it runs on port 3000.
