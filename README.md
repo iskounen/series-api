@@ -13,5 +13,5 @@ A web application and API service that makes archives of serialized books availa
 
 ## Run
 
-- To begin the application, run `rails server`.
+- To begin the application, run `rails server -b 0.0.0.0`.
 - By default it runs on port 3000.
