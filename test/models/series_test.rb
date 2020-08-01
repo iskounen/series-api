@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class SeriesTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test 'should not save series without title' do
+    series = Series.new
+    assert_not series.save, 'Saved the series without a title'
+  end
 end
