@@ -5,7 +5,7 @@ class SeriesController < ApplicationController
     respond_to do |format|
       format.html
       format.json { render json: @series }
-     end
+    end
   end
 
   def show
@@ -22,7 +22,7 @@ class SeriesController < ApplicationController
 
   def create
     @series = Series.new(series_params)
- 
+
     if @series.save
       redirect_to @series
     else
@@ -32,7 +32,7 @@ class SeriesController < ApplicationController
 
   def update
     @series = Series.find(params[:id])
-   
+
     if @series.update(series_params)
       redirect_to @series
     else
@@ -43,12 +43,13 @@ class SeriesController < ApplicationController
   def destroy
     @series = Series.find(params[:id])
     @series.destroy
-   
+
     redirect_to series_index_path
   end
 
   private
-    def series_params
-      params.require(:series).permit(:title)
-    end
+
+  def series_params
+    params.require(:series).permit(:title)
+  end
 end

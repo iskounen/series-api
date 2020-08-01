@@ -6,7 +6,7 @@ class BooksController < ApplicationController
     respond_to do |format|
       format.html
       format.json { render json: @books }
-     end
+    end
   end
 
   def show
@@ -15,8 +15,8 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { redirect_to rails_blob_path(@book.archive, disposition: "attachment") }
-     end
+      format.json { redirect_to rails_blob_path(@book.archive, disposition: 'attachment') }
+    end
   end
 
   def create
@@ -33,7 +33,8 @@ class BooksController < ApplicationController
   end
 
   private
-    def book_params
-      params.require(:book).permit(:number, :archive)
-    end
+
+  def book_params
+    params.require(:book).permit(:number, :archive)
+  end
 end
