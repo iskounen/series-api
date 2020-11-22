@@ -7,11 +7,7 @@
 <%= render @series.books %>
 
 <h2>Add a book:</h2>
-<%= content_tag :div,
-  id: "series_data",
-  data: @series.to_json do %>
-<% end %>
-<%= javascript_pack_tag 'book_form'  %>
+<%= render 'books/form' %>
 
 <%= link_to 'Edit', edit_series_path(@series) %> |
 <%= link_to 'Back', series_index_path %>
