@@ -1,7 +1,9 @@
 class BooksController < ApplicationController
   def index
+    @filter = params[:filter]
     @series = Series.find(params[:series_id])
-    @books = @series.books
+    @books =  @series.books
+    @books = @books.select(&:processed?) if @filter == 'processed'
 
     respond_to do |format|
       format.html

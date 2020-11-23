@@ -17,19 +17,19 @@ export class Series extends React.Component<SeriesProps, SeriesState> {
   constructor(props: SeriesProps) {
     super(props)
     this.state = { series: [] }
-    this.handleClick = this.handleClick.bind(this)
+    this.handleClickSeries = this.handleClickSeries.bind(this)
   }
 
   componentDidMount(): void {
     fetch("/series.json").then(response => response.json()).then(data => this.setState({ series: data }))
   }
 
-  handleClick(e: React.MouseEvent): void {
+  handleClickSeries(e: React.MouseEvent): void {
     this.props.callback((e.target as HTMLLIElement).dataset.seriesId, null)
   }
 
   render(): ReactNode {
-    const series = this.state.series.map((series, index) => <li key={index} data-series-id={series.id} onClick={this.handleClick}>{series.title}</li>)
+    const series = this.state.series.map((series, index) => <li key={index} data-series-id={series.id} onClick={this.handleClickSeries}>{series.title}</li>)
 
     return (
       <ol>{series}</ol>

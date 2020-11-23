@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_23_195041) do
+ActiveRecord::Schema.define(version: 2020_11_22_123845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2020_05_23_195041) do
     t.uuid "series_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "last_processed_at", precision: 6
     t.index ["series_id"], name: "index_books_on_series_id"
   end
 

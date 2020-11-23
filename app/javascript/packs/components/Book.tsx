@@ -9,10 +9,10 @@ interface BookProps {
 export class Book extends React.Component<BookProps> {
   constructor(props: BookProps) {
     super(props)
-    this.handleBackClick = this.handleBackClick.bind(this)
+    this.handleClickBack = this.handleClickBack.bind(this)
   }
 
-  handleBackClick(): void {
+  handleClickBack(): void {
     this.props.callback(this.props.seriesId, null)
   }
 
@@ -21,7 +21,7 @@ export class Book extends React.Component<BookProps> {
       <div>
         <h1>{this.props.seriesId}</h1>
         <h2>{this.props.bookId}</h2>
-        <button onClick={this.handleBackClick}>Back</button>
+        <button onClick={this.handleClickBack}>Back</button>
       </div>
     )
   }
