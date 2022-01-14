@@ -24,3 +24,5 @@ To create a user that the application can use to connect to the database, run `p
 
 - To begin the application, run `rails server`.
 - By default it runs on port 3000.
+
+- To reach this application on a local network, run `rails server -b 0.0.0.0`
